@@ -59,6 +59,7 @@ contract Shogi {
     }
 
     function setPlaceInfo(uint _x, uint _y, ShogiPiece shogiPiece, bool isFront) public returns (PlaceInfo memory){
+        require(_x < 9 && _x >= 0, 'x must be an integer greater than or equal to 0 and less than 9');
         pos[_x][_y] =  PlaceInfo(shogiPiece, isFront);
         return pos[_x][_y];
     }
