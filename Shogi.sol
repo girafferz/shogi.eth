@@ -54,11 +54,11 @@ contract Shogi {
 
     mapping(uint=> mapping(uint => PlaceInfo)) pos;
 
-    function getPositionInfo(uint _x, uint _y) public view returns (PlaceInfo memory) {
+    function getPlaceInfo(uint _x, uint _y) public view returns (PlaceInfo memory) {
         return pos[_x][_y];
     }
 
-    function setPositionInfo(uint _x, uint _y, ShogiPiece shogiPiece, bool isFront) public returns (PlaceInfo memory){
+    function setPlaceInfo(uint _x, uint _y, ShogiPiece shogiPiece, bool isFront) public returns (PlaceInfo memory){
         pos[_x][_y] =  PlaceInfo(shogiPiece, isFront);
         return pos[_x][_y];
     }
